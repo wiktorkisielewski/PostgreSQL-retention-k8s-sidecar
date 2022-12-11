@@ -1,0 +1,14 @@
+postgres:
+  address: postgres.host
+  port: 5432
+  user: postgres
+  password: postgres
+
+retention:
+  time: 7776000 #seconds [90 days by default]
+  databases:
+    some_db:
+      - * #all tables
+    other_db:
+      - some_table
+      - some_other_table
