@@ -1,1 +1,1 @@
-# PostgreSQL-retention-k8s-sidecar
+# PostgreSQL retention k8s sidecar
