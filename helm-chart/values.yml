@@ -1,14 +1,12 @@
-postgres:
-  address: postgres.host
-  port: 5432
-  user: postgres
-  password: postgres
+image:
+tag:
 
-retention:
-  time: 7776000 #seconds [90 days by default]
-  databases:
-    some_db:
-      - * #all tables
-    other_db:
-      - some_table
-      - some_other_table
+imagePullPolicy:
+
+resources:
+  requests:
+    memory: "32Mi"
+    cpu: "0.1"
+  limits:
+    memory: "64Mi"
+    cpu: "0.1"
