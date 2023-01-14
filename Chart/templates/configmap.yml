@@ -1,5 +1,7 @@
+apiVersion: v1
 kind: ConfigMap
-  name: psql_retention_settings
+metadata:
+  name: psql-retention-settings
 data:
   targets.yml: |
 {{ .Values.retention.targets | indent 4 }}

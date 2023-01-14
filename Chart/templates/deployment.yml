@@ -1,43 +1,37 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: psql_retention_sidecar
+  name: psql-retention-sidecar
   labels:
-    app: psql_retention_sidecar
-    release: "{{ .Release.Name }}"
-{{- with .Values.deploymentAnnotations }}
-  annotations:
-{{ toYaml . | indent 4 }}
-{{- end }}
+    app: psql-retention-sidecar
 spec:
   strategy:
 {{ toYaml .Values.strategy | indent 4 }}
   selector:
     matchLabels:
-      app: psql_retention_sidecar
-      release: {{ .Release.Name }}
+      app: psql-retention-sidecar
   template:
     metadata:
       labels:
-        app: psql_retention_sidecar
+        app: psql-retention-sidecar
     spec:
       {{- if .Values.imagePullSecrets }}
       imagePullSecrets:
 {{ toYaml .Values.imagePullSecrets | indent 8 }}
       {{- end }}
       containers:
-      - name: psql_retention_sidecar
+      - name: psql-retention-sidecar
         image: "{{ .Values.image }}:{{ .Values.imageTag }}"
         imagePullPolicy: {{ .Values.imagePullPolicy | quote }}
         resources:
 {{ toYaml .Values.resources | indent 10 }}
         volumeMounts:
-        - name: psql_retention_settings
+        - name: psql-retention-settings
           mountPath: /targets.yml
           subPath: targets.yml
           readOnly: true
       volumes:
       - configMap:
-          name: psql_retention_settings
-        name: psql_retention_settings
-        emptyDir: {}
+          name: psql-retention-settings
+        name: psql-retention-settings
+        # emptyDir: {}
