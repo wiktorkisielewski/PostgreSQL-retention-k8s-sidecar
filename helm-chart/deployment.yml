@@ -20,18 +20,7 @@ spec:
     metadata:
       labels:
         app: psql_retention_sidecar
-        release: {{ .Release.Name }}
-{{- with .Values.podLabels }}
-{{ toYaml . | indent 8 }}
-{{- end }}
-{{- with .Values.podAnnotations }}
-      annotations:
-{{ toYaml . | indent 8 }}
-{{- end }}
     spec:
-      {{- if .Values.schedulerName }}
-      schedulerName: "{{ .Values.schedulerName }}"
-      {{- end }}
       {{- if .Values.imagePullSecrets }}
       imagePullSecrets:
 {{ toYaml .Values.imagePullSecrets | indent 8 }}

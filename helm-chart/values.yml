@@ -1,7 +1,7 @@
-image:
-tag:
+image: wiktorkisielewski/postgres-retention-sidecar
+tag: 0.1
 
-imagePullPolicy:
+imagePullPolicy: IfNotPresent
 
 resources:
   requests:

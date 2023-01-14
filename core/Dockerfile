@@ -1,10 +1,7 @@
-FROM python:3.8
+FROM bash:5.2.15
 
 WORKDIR /
 
-COPY requirements.txt /
-COPY app.py /
+COPY app.sh /
 
-RUN pip install -r requirements.txt
-
-CMD ["python", "-u", "app.py"]
+CMD ["./app.sh"]
