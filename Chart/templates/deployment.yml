@@ -23,6 +23,15 @@ spec:
       - name: psql-retention-sidecar
         image: "{{ .Values.image }}:{{ .Values.imageTag }}"
         imagePullPolicy: {{ .Values.imagePullPolicy | quote }}
+        env:
+        - name: PGPASSWORD
+          value: {{ .Values.postgres.password }}
+        - name: PGPUSER
+          value: {{ .Values.postgres.user }}
+        - name: PGHOST
+          value: {{ .Values.postgres.host }}
+        - name: PGPORT
+          value: "{{ .Values.postgres.port }}"
         resources:
 {{ toYaml .Values.resources | indent 10 }}
         volumeMounts:

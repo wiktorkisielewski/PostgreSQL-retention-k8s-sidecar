@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: psql-retention-settings
 data:
-  targets.yml: |
+  targets.inv: |
 {{ .Values.retention.targets | indent 4 }}
