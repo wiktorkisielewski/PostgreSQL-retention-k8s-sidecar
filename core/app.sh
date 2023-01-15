@@ -1,3 +1,6 @@
 #!/bin/sh
 
-echo 1 && pwd && ls -la
+while :
+    do cat targets.yml
+    sleep 10
+done
