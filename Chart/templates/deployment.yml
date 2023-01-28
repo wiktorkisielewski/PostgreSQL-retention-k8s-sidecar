@@ -26,7 +26,7 @@ spec:
         env:
         - name: PGPASSWORD
           value: {{ .Values.postgres.password }}
-        - name: PGPUSER
+        - name: PGUSER
           value: {{ .Values.postgres.user }}
         - name: PGHOST
           value: {{ .Values.postgres.host }}
