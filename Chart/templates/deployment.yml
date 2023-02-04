@@ -36,8 +36,8 @@ spec:
 {{ toYaml .Values.resources | indent 10 }}
         volumeMounts:
         - name: psql-retention-settings
-          mountPath: /targets.yml
-          subPath: targets.yml
+          mountPath: /targets.inv
+          subPath: targets.inv
           readOnly: true
       volumes:
       - configMap:

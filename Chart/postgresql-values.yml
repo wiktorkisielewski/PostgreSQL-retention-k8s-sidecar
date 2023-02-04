@@ -9,9 +9,9 @@ retention:
   time: 7776000
   # database and table names
   # eg.
-  # database_name: [table1, table2]
+  # database_name: table1, table2
   # wildcard "*" means all the tables will be affected
-  # database_name: [*]
-  targets:
-    bb_icmarkets: [*]
-    other_db: [balance1, balance2]
+  # database_name: *
+  targets: |
+    bb_icmarkets: *
+    other_db: balance1, balance2
