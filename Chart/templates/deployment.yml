@@ -25,7 +25,7 @@ spec:
         imagePullPolicy: {{ .Values.imagePullPolicy | quote }}
         env:
         - name: RETENTION_FREQUENCY
-          value: {{ .Values.retention.frequency }}
+          value: "{{ .Values.retention.frequency }}"
         - name: PGPASSWORD
           value: {{ .Values.postgres.password }}
         - name: PGUSER
