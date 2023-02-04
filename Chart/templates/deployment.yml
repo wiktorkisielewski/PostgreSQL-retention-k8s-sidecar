@@ -24,6 +24,8 @@ spec:
         image: "{{ .Values.image }}:{{ .Values.imageTag }}"
         imagePullPolicy: {{ .Values.imagePullPolicy | quote }}
         env:
+        - name: RETENTION_FREQUENCY
+          value: {{ .Values.retention.frequency }}
         - name: PGPASSWORD
           value: {{ .Values.postgres.password }}
         - name: PGUSER
@@ -36,7 +38,7 @@ spec:
 {{ toYaml .Values.resources | indent 10 }}
         volumeMounts:
         - name: psql-retention-settings
-          mountPath: /targets.inv
+          mountPath: /app/targets.inv
           subPath: targets.inv
           readOnly: true
       volumes:

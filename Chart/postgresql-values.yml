@@ -5,8 +5,10 @@ postgres:
   password: EogqJDdd#2^S6LJ!zqXUw!&rU@G45cPU
 
 retention:
-  # retention time is defined in seconds (90 days by default)
+  # retention time (in seconds)
   time: 7776000
+  # frequency of retention execution (in seconds)
+  frequency: 600
   # database and table names
   # eg.
   # database_name: table1, table2
