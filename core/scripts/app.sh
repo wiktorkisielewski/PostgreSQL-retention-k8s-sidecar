@@ -7,7 +7,7 @@ TARGETS_LIST=targets.inv
 
 while :
   do echo "Starting retention cycle"
-  target_databases=$(get_target_databases $TARGET_LIST)
+  target_databases=$(get_target_databases $TARGETS_LIST)
   echo "Targeting databases: $target_databases"
   for database in $target_databases;
     do target_tables=$(get_target_tables $TARGET_LIST $database)

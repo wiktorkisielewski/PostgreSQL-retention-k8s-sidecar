@@ -26,6 +26,8 @@ spec:
         env:
         - name: RETENTION_FREQUENCY
           value: "{{ .Values.retention.frequency }}"
+        - name: RETENTION_TIME
+          value: "{{ .Values.retention.time }}"
         - name: PGPASSWORD
           value: {{ .Values.postgres.password }}
         - name: PGUSER
