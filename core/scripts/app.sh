@@ -1,7 +1,7 @@
 #!/bin/sh
 
-source=./psql.sh
-source=./targets.sh
+source=psql.sh
+source=targets.sh
 
 TARGETS_LIST=targets.inv
 
