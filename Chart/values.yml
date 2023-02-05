@@ -1,5 +1,5 @@
 image: wiktorkisielewski/postgres-retention-sidecar
-imageTag: 0.1.3
+imageTag: 0.1.4
 
 imagePullPolicy: IfNotPresent
 

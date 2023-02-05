@@ -11,9 +11,9 @@ retention:
   frequency: 60
   # database and table names
   # eg.
-  # database_name: table1, table2
+  # database_name: table1, table2 [timestamp column name]
   # wildcard "*" means all the tables will be affected
   # database_name: *
   targets: |
-    bb_icmarkets: *
-    other_db: balance1, balance2
+    bb_icmarkets: * [time_stamp]
+    other_db: balance1, balance2 [time_stamp]
