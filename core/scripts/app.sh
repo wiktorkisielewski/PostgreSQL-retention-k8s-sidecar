@@ -15,7 +15,7 @@ while :
     if [[ target_tables == "*" ]];
       then target_tables=$(get_table_names $database);
     fi
-    for table in target_tables;
+    for table in $target_tables;
       do echo "Clearing table: $target_tables in db: $database"
       echo "retain_table $database $table"
       done
